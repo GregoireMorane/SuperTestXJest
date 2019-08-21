@@ -14,7 +14,7 @@ describe("app", () => {
     describe("POST /messages", () => {
       describe("with non-empty content", () => {
         describe("with JavaScript code in personalWebsiteURL", () => {
-          it("responds with error", async done => {
+          it("responds with error", done => {
             agent
               .post("/messages")
               .send(
@@ -28,7 +28,7 @@ describe("app", () => {
         });
 
         describe("with HTTP URL in personalWebsiteURL", () => {
-          it("responds with success", async done => {
+          it("responds with success", done => {
             agent
               .post("/messages")
               .send("content=ttt&personalWebsiteURL=https://www.lemonde.fr")
